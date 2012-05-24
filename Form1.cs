@@ -208,5 +208,11 @@ namespace _2chReader
 
         }
 
+        private void тредМенеджерToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThreadManager tmfrm = new ThreadManager();
+            tmfrm.Show();
+        }
+
     }
 }

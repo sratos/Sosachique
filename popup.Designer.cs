@@ -53,7 +53,7 @@
             this.label1.ContextMenuStrip = this.contextMenuStrip2;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(82, 14);
+            this.label1.Location = new System.Drawing.Point(81, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 41);
             this.label1.TabIndex = 0;
@@ -135,7 +135,7 @@
             this.lThread.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lThread.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lThread.ForeColor = System.Drawing.Color.White;
-            this.lThread.Location = new System.Drawing.Point(-1, 0);
+            this.lThread.Location = new System.Drawing.Point(-1, 1);
             this.lThread.Name = "lThread";
             this.lThread.Size = new System.Drawing.Size(200, 11);
             this.lThread.TabIndex = 5;
@@ -144,7 +144,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::_2chReader.Properties.Resources.c12;
-            this.pictureBox1.Location = new System.Drawing.Point(235, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(234, 1);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(12, 11);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -157,7 +157,7 @@
             this.lCount.AutoSize = true;
             this.lCount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lCount.ForeColor = System.Drawing.Color.White;
-            this.lCount.Location = new System.Drawing.Point(203, 0);
+            this.lCount.Location = new System.Drawing.Point(203, 1);
             this.lCount.Name = "lCount";
             this.lCount.Size = new System.Drawing.Size(13, 13);
             this.lCount.TabIndex = 8;

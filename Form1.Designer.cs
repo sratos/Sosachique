@@ -43,6 +43,7 @@
             this.dlThread = new System.ComponentModel.BackgroundWorker();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.тредМенеджерToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,11 +79,12 @@
             this.остановитьToolStripMenuItem,
             this.звукToolStripMenuItem,
             this.скачатьТредToolStripMenuItem,
+            this.тредМенеджерToolStripMenuItem,
             this.обнулитьЗакрытыеToolStripMenuItem,
             this.показатьОкноToolStripMenuItem,
             this.выходToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(185, 136);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(185, 180);
             // 
             // остановитьToolStripMenuItem
             // 
@@ -151,6 +153,13 @@
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.Click += new System.EventHandler(this.notifyIcon1_Click);
             // 
+            // тредМенеджерToolStripMenuItem
+            // 
+            this.тредМенеджерToolStripMenuItem.Name = "тредМенеджерToolStripMenuItem";
+            this.тредМенеджерToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.тредМенеджерToolStripMenuItem.Text = "ТредМенеджер...";
+            this.тредМенеджерToolStripMenuItem.Click += new System.EventHandler(this.тредМенеджерToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,6 +189,7 @@
         private System.Windows.Forms.ToolStripMenuItem звукToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem обнулитьЗакрытыеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem скачатьТредToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem тредМенеджерToolStripMenuItem;
     }
 }
 
