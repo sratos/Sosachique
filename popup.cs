@@ -10,7 +10,7 @@ using System.Threading;
 using System.Diagnostics;
 using System.Data.SQLite;
 using System.IO;
- 
+   
 namespace _2chReader
 {
     public partial class popup : Form
@@ -192,6 +192,11 @@ namespace _2chReader
 
             Thread2 t2 = new Thread2();
             t2.downloadThread("http://2ch.so/b/res/" + thread_num + ".html", true, false);
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
         }
 
 
