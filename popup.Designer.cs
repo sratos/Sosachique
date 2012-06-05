@@ -42,6 +42,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lCount = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.слушатьТредToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.threadImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -70,9 +71,10 @@
             this.схоронитьТредToolStripMenuItem,
             this.схоронитьТредСПодливойToolStripMenuItem,
             this.закрытьТредToolStripMenuItem,
-            this.какПлейлистYouTubeToolStripMenuItem});
+            this.какПлейлистYouTubeToolStripMenuItem,
+            this.слушатьТредToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(227, 136);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(227, 180);
             // 
             // скачатьВсеИзображенияToolStripMenuItem
             // 
@@ -176,6 +178,13 @@
             this.panel1.TabIndex = 9;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
+            // слушатьТредToolStripMenuItem
+            // 
+            this.слушатьТредToolStripMenuItem.Name = "слушатьТредToolStripMenuItem";
+            this.слушатьТредToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.слушатьТредToolStripMenuItem.Text = "Слушать тред...";
+            this.слушатьТредToolStripMenuItem.Click += new System.EventHandler(this.слушатьТредToolStripMenuItem_Click);
+            // 
             // popup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -220,5 +229,6 @@
         private System.Windows.Forms.ToolStripMenuItem какПлейлистYouTubeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem схоронитьТредСПодливойToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripMenuItem слушатьТредToolStripMenuItem;
     }
 }

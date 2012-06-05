@@ -34,6 +34,9 @@ namespace _2chReader
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            ThreadListen tl = new ThreadListen();
+            tl.Show();
+
             regetThreads();
         }
 
@@ -212,6 +215,12 @@ namespace _2chReader
         {
             ThreadManager tmfrm = new ThreadManager();
             tmfrm.Show();
+        }
+
+        private void вайпТредаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThreadWipe tw = new ThreadWipe();
+            tw.Show();
         }
 
     }

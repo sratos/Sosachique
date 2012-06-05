@@ -184,19 +184,25 @@ namespace _2chReader
         private void схоронитьТредToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Thread2 t2 = new Thread2();
-            t2.downloadThread("http://2ch.so/b/res/" + thread_num + ".html", false, false);
+            t2.downloadThread("http://2ch.so/b/res/" + thread_num + ".html", false, false,"b");
         }
 
         private void схоронитьТредСПодливойToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
             Thread2 t2 = new Thread2();
-            t2.downloadThread("http://2ch.so/b/res/" + thread_num + ".html", true, false);
+            t2.downloadThread("http://2ch.so/b/res/" + thread_num + ".html", true, false,"b");
         }
 
         private void panel1_Paint_1(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void слушатьТредToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThreadListen tl = new ThreadListen();
+            tl.Show();
         }
 
 

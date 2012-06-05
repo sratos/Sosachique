@@ -63,7 +63,7 @@ namespace _2chReader
         public string raw;
         public int counter;
         public ANetPage page;
-        public bool downloadThread(string link, bool dlPics, bool isControled)
+        public bool downloadThread(string link, bool dlPics, bool isControled,string board)
         {
             WebClient webClient = new WebClient();
 
@@ -80,13 +80,23 @@ namespace _2chReader
             string nm = "";
             string tmp;
             string lraw = raw;
-            lraw = lraw.Replace("/b/src/", "");
-            lraw = lraw.Replace("/b/thumb/", "");
+            lraw = lraw.Replace("/" + board + "/src/", "");
+            lraw = lraw.Replace("/" + board + "/thumb/", "");
             lraw = lraw.Replace("/test/js/", "");
-            lraw = lraw.Replace("href=\"/b/res/", "href=\"");
+            lraw = lraw.Replace("href=\"/" + board + "/res/", "href=\"");
 
-            File.WriteAllText("./archive/" + link.Replace("http://2ch.so/b/res/", ""), lraw);
-            zip.AddFile("./archive/" + link.Replace("http://2ch.so/b/res/", ""), ".");
+            if (!Directory.Exists("./archive/")) Directory.CreateDirectory("./archive/");
+
+            try
+            {
+                File.WriteAllText("./archive/" + link.Replace("http://2ch.so/" + board + "/res/", ""), lraw);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Все, накачались", "Sosachique", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return true;
+            }
+            zip.AddFile("./archive/" + link.Replace("http://2ch.so/" + board + "/res/", ""), ".");
 
             while (lnk != null)
             {
@@ -97,16 +107,16 @@ namespace _2chReader
                         lnk = AStringHelper.ExtractString(raw, "<a target=\"_blank\" href=\"", "\">");
                         tmp = "<a target=\"_blank\" href=\"" + lnk + "\">";
                         raw = raw.Replace(tmp, "");
-                        nm = lnk.Replace("/b/src/", "");
+                        nm = lnk.Replace("/" + board + "/src/", "");
                         webClient.DownloadFile("http://2ch.so" + lnk, "./archive/" + nm);
                         zip.AddFile("./archive/" + nm, ".");
                     }
 
-                    lnk = AStringHelper.ExtractString(raw, "<img src=\"/b/thumb/", "\"");
-                    tmp = "<img src=\"/b/thumb/" + lnk + "\"";
+                    lnk = AStringHelper.ExtractString(raw, "<img src=\"/" + board + "/thumb/", "\"");
+                    tmp = "<img src=\"/" + board + "/thumb/" + lnk + "\"";
                     raw = raw.Replace(tmp, "");
-                    nm = lnk.Replace("/b/src/", "");
-                    webClient.DownloadFile("http://2ch.so/b/thumb/" + lnk, "./archive/" + nm);
+                    nm = lnk.Replace("/" + board + "/src/", "");
+                    webClient.DownloadFile("http://2ch.so/" + board + "/thumb/" + lnk, "./archive/" + nm);
                     zip.AddFile("./archive/" + nm,".");
                     downloaded++;
 
@@ -122,10 +132,18 @@ namespace _2chReader
                     
                 catch (Exception xx)
                 {
-                    string ll = link.Replace("http://2ch.so/b/res/", "");
+                    string ll = link.Replace("http://2ch.so/" + board + "/res/", "");
                     ll = ll.Replace(".html", "");
                     ll += ".zip";
-                    zip.Save("./thread_archive/" + ll);
+                    try
+                    {
+                        zip.Save("./thread_archive/" + ll);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ошибка: " + ex.Message,"Sosachique",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        return false;
+                    }
                     Directory.Delete("./archive/", true);
                     Directory.CreateDirectory("./archive/");
                     return false;
